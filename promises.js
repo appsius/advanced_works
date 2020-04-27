@@ -15,14 +15,17 @@ getCallbackData((err, data) => {
 });
 
 // Promise
-const myPromise = new Promise((resolve, reject) => {
-	setTimeout(() => {
-		reject('The promise is NOT fine...');
-		reject('The promise is NOT fine...');
-	}, 1000);
-});
+const getPromiseData = (data) =>
+	new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve(`My data is: ${data}`);
+			// reject('The promise is NOT fine...');
+			// reject('The promise is NOT fine...');
+		}, 1000);
+	});
+const myPromise = getPromiseData(333);
 
-myPromise.then(
+const myPromise = myPromise.then(
 	(data) => {
 		console.log(data);
 	},
