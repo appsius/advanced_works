@@ -49,12 +49,12 @@ getPromiseData(2).then(
 	}
 );
 
-getPromiseData('10')
+getPromiseData(10)
 	.then((data) => {
 		return getPromiseData(data);
 	})
 	.then((data) => {
-		return getPromiseData(data);
+		return 'This is a test';
 	})
 	.then((data) => {
 		console.log(data);
